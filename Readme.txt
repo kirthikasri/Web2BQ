@@ -1,6 +1,6 @@
 Scraper to BigQuery
 #Description
-This project scrapes data from a website, publishes it to Google Pub/Sub, and then loads it into Google BigQuery
+This project scrapes data from a website, publishes it into Google Pub/Sub, and then loads it into Google BigQuery
 #Setup
 #Prerequisites
 Python 3.7
