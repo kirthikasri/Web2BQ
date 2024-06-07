@@ -1,4 +1,4 @@
-#  Scraper to BigQuery
+ Scraper to BigQuery
 
 ## Description
 
