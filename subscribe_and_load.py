@@ -22,8 +22,8 @@ def insert_into_bigquery(data):
         print('Rows have been inserted.')
 
 def subscribe():
-    project_id = os.getenv('GCP_PROJECT_ID')
-    subscription_id = os.getenv('PUBSUB_SUBSCRIPTION_ID')
+    project_id = os.getenv('')
+    subscription_id = os.getenv('')
     
     subscriber = pubsub_v1.SubscriberClient()
     subscription_path = subscriber.subscription_path(project_id, subscription_id)
