@@ -15,28 +15,28 @@ This project scrapes data from the  website, publishes it to Google Pub/Sub, and
 ### Installation
 
 1. Clone the repository:
-    ```sh
-    git clone ....
+  
+    git clone 
     cd -scraper
-    ```
+   
 
 2. Install dependencies:
-    ```sh
+   
     pip install -r requirements.txt
-    ```
+  
 
 3. Set up Google Cloud authentication:
-    ```sh
+  
     gcloud auth application-default login
-    ```
+   
 
 4. Set up environment variables:
-    ```sh
+ 
     export GCP_PROJECT_ID='your-gcp-project-id'
     export PUBSUB_TOPIC_ID='your-pubsub-topic-id'
     export PUBSUB_SUBSCRIPTION_ID='your-pubsub-subscription-id'
     export BIGQUERY_TABLE_ID='your-dataset.your-table'
-    ```
+
 
 ### Running the Scraper
 
