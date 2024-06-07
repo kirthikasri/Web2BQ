@@ -22,8 +22,8 @@ def scrape_converse():
 
 # Publish messages to Pub/Sub
 def publish_to_pubsub(data):
-    project_id = os.getenv('GCP_PROJECT_ID')
-    topic_id = os.getenv('PUBSUB_TOPIC_ID')
+    project_id = os.getenv('')
+    topic_id = os.getenv('')
     
     publisher = pubsub_v1.PublisherClient()
     topic_path = publisher.topic_path(project_id, topic_id)
