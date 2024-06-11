@@ -1,6 +1,5 @@
 Scraper to BigQuery
-#Description
-This project scrapes data from a website, publishes it into Google Pub/Sub, and then loads it into Google BigQuery
+This project scrapes the data from a website, publishes it into Google Pub/Sub, and then loads it into Google BigQuery
 #Setup
 #Prerequisites
 Python 3.7
@@ -9,7 +8,6 @@ Google Cloud project with Pub/Sub and BigQuery APIs enabled
 #Installation
 1.Clone the repository
 2.Install dependencies
-pip install -r requirements.txt
 3.Set up Google Cloud authentication
 4.Set up environment variables
 export GCP_PROJECT_ID=''
