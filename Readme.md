@@ -1,4 +1,4 @@
-Scraper to BigQuery
+##Scraper to BigQuery-
 
 This project scrapes the data from a website, publishes it into Google Pub/Sub, and then loads it into Google BigQuery
 #Setup
