@@ -34,7 +34,7 @@
         python scrape_and_publish.py
     </pre>
 
-   <h4>Running in the Bash Shell and Deployment in GCloud</h4>
+   <h3>Running in the Bash Shell and Deployment in GCloud</h3>
    <p>To subscribe to the Pub/Sub topic and load data into BigQuery:</p>
     <pre>
         python subscribe_and_load.py
