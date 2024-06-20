@@ -23,10 +23,10 @@
         <li>Set up environment variables</li>
     </ol>
     <pre>
-        export GCP_PROJECT_ID=''
-        export PUBSUB_TOPIC_ID=''
-        export PUBSUB_SUBSCRIPTION_ID=''
-        export BIGQUERY_TABLE_ID=''
+        export GCP_PROJECT_ID=
+        export PUBSUB_TOPIC_ID=
+        export PUBSUB_SUBSCRIPTION_ID=
+        export BIGQUERY_TABLE_ID=
     </pre>
   <h3>Running the Scraper</h3>
     <p>To scrape data and publish it to Pub/Sub:</p>
