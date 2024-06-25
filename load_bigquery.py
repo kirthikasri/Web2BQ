@@ -32,7 +32,7 @@ def main():
     pubsub_message = {
         'data':base64.b6encode(json.dumps(covid_data).encode('utf-8')).decode('utf-8')
     }
-    pubsub_tot_bigquery(pubsub_message,None)
+    pubsub_to_bigquery(pubsub_message,None)
 
 if __name__ == "__main__":
     main()
