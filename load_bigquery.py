@@ -27,7 +27,12 @@ def pubsub_to_bigquery(event,context):
 
 def main():
     covid_data = fetch_covid_data()
-    print(f"Fet
+    print(f"Fetched Data: {covid_data}")
+    publish _to_pubsub(covid_data)
+    pubsub_message = {
+        'data':base64.b6encode(json.dumps(covid_data).encode('utf-8')).decode('utf-8')
+    }
+    pubsub_tot_bigquery(pubsub_message,None)
 
 if __name__ == '__main__':
-    subscribe()
+    main()
