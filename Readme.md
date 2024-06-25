@@ -34,10 +34,10 @@
         python scrape_and_publish.py
     </pre>
 
-   <h3>Running in the Bash Shell and Deployment in GCloud</h3>
-   <p>To subscribe to the Pub/Sub topic and load data into BigQuery:</p>
+   <h3>pushing the data in GCloud BigQuery</h3>
+   <p>To load data into BigQuery:</p>
     <pre>
-        python subscribe_and_load.py
+        pubsub_tot_bigquery(pubsub_message)
     </pre>
 </body>
 </html>
