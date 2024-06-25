@@ -1,42 +1,33 @@
-from google.cloud import pubsub_v1
-from google.cloud import bigquery
-import json
-import os
 
-def callback(message):
-    print(f'Received message: {message}')
-    data = json.loads(message.data)
-    insert_into_bigquery(data)
-    message.ack()
 
-def insert_into_bigquery(data):
-    client = bigquery.Client()
-    table_id = os.getenv('BIGQUERY_TABLE_ID')
+def pubsub_to_bigquery(event,context):
+    pubsub_message = base64.b64decode(event['data']).decode('utf-8')
+    data = json.loads(pubsub_message)
+    #create a row to insert  
+    rows_to_insert = [
+        {
+            "total_cases": data['total_cases'],
+            "deaths":data['deaths'],
+            "recovered":data['recovered']
+        }
+        
+    ]
     
-    rows_to_insert = [data]
+    df = pd.Dataframe(rows_to_insert)
+    table = pyarrow.Table.from_pandas(df)
+    table_id ='project_id.my_dataset.covid_data'
+    df['total_cases'] = df['total_cases'].astype(str)
+    df['deaths'] = df['deaths'].astype(str)
+    df['recovered'] = df['recovered'].astype(str)
     
-    errors = client.insert_rows_json(table_id, rows_to_insert)
-    if errors:
-        print(f'Encountered errors while inserting rows: {errors}')
-    else:
-        print('Rows have been inserted.')
+    job = client.load_table_from_dataframe(df,table_id)
+    
+    
 
-def subscribe():
-    project_id = os.getenv('')
-    subscription_id = os.getenv('')
-    
-    subscriber = pubsub_v1.SubscriberClient()
-    subscription_path = subscriber.subscription_path(project_id, subscription_id)
-    
-    streaming_pull_future = subscriber.subscribe(subscription_path, callback=callback)
-    print(f'Listening for messages on {subscription_path}..\n')
-    
-    with subscriber:
-        try:
-            streaming_pull_future.result()
-        except TimeoutError:
-            streaming_pull_future.cancel()
-            streaming_pull_future.result()
+
+def main():
+    covid_data = fetch_covid_data()
+    print(f"Fet
 
 if __name__ == '__main__':
     subscribe()
