@@ -34,7 +34,7 @@
         python scrape_and_publish.py
     </pre>
 
-   <h3>pushing the data in GCloud BigQuery</h3>
+   <h3>Pushing the data in GCloud BigQuery</h3>
    <p>To load data into BigQuery:</p>
     <pre>
         pubsub_tot_bigquery(pubsub_message)
