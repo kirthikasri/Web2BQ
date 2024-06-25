@@ -37,7 +37,7 @@
    <h3>Pushing the data in GCloud BigQuery</h3>
    <p>To load data into BigQuery:</p>
     <pre>
-        pubsub_tot_bigquery(pubsub_message)
+        pubsub_to_bigquery(pubsub_message)
     </pre>
 </body>
 </html>
